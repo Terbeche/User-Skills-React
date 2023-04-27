@@ -5,8 +5,9 @@ const SkillsList = ({ username }) => {
     const [skills, setSkills] = useState([]);
     const [picture, setPicture] = useState(null);
     const [name, setName] = useState(null);
-    const [experiences, setExperiences] = useState([]); 
+    const [jobs, setJobs] = useState([]); 
     const [education, setEducation] = useState([]);
+    const [projects, setProjects] = useState([]);
     const [otherUsers, setOtherUsers] = useState([]);
     const [clickedSkill, setClickedSkill] = useState(null);
 
@@ -27,8 +28,9 @@ const SkillsList = ({ username }) => {
         setSkills(data.strengths);
         setPicture(data.person.picture);
         setName(data.person.name);
-        setExperiences(data.experiences);
+        setJobs(data.jobs);
         setEducation(data.education);
+        setProjects(data.projects);
         })
         .catch(error => console.error(error));
     }, [username]);
@@ -36,7 +38,7 @@ const SkillsList = ({ username }) => {
 
     useEffect(() => {
         if (clickedSkill && otherUsers) {
-          navigate(`/${clickedSkill.name}`, { state: { skill: clickedSkill, experiences, education, otherUsers } });
+          navigate(`/${clickedSkill.name}`, { state: { skill: clickedSkill, jobs, education, projects, otherUsers } });
     
           setClickedSkill(null);
         }
@@ -96,9 +98,7 @@ const SkillsList = ({ username }) => {
     return (
       <>       
 
-      <div id="profile-picture-wrapper"> 
         {picture && <img id="profile-picture" src={picture} alt="Profile" />}
-        </div>
         {name && <h1 id='name'>{name}</h1>}
         
         <div className='skills'>
@@ -148,7 +148,7 @@ const SkillsList = ({ username }) => {
           ))}
         </ul>
         </div>
-        
+
         <div className='skills-group'>
         {skillGroups["no-experience-interested"].length !== 0 && <h2 className='skill-level'>No Experience - Interested</h2>}
         <ul>

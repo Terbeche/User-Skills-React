@@ -1,36 +1,94 @@
 import { useLocation } from 'react-router-dom';
+import React from 'react';
 
 const SkillDetails = () => {
-  const location = useLocation();
-  const skill = location.state.skill;
-  const experiences = location.state.experiences;
-  const education = location.state.education;
-  const otherUsers = location.state.otherUsers;
+    const location = useLocation();
+    const skill = location.state.skill;
+    const education = location.state.education;
+    const jobs = location.state.jobs;
+    const projects = location.state.projects;
+    const otherUsers = location.state.otherUsers;
 
-  const relatedExperiences = experiences.filter(experience =>
-    experience.strengths.includes(skill.name)
-  );
+    console.log(jobs[0].organizations[0].name);
+//   const relatedEducation = education.filter(education =>
+//     education.strengths.includes(skill.name)
+//   );
 
-  const relatedEducation = education.filter(education =>
-    education.strengths.includes(skill.name)
-  );
+//   const relatedJobs = jobs.filter(jobs =>
+//     jobs.strengths.includes(skill.name)
+//   );
+
+//     const relatedProjects = projects.filter(projects =>
+//         projects.strengths.includes(skill.name)
+//     );
 
   return (
-    <div>
+    <div className='skill-details'>
       <h2>{skill.name}</h2>
-      <p>Proficiency: {skill.proficiency}</p>
-      <h3>Related Experiences</h3>
-      <ul>
-        {relatedExperiences.map(experience => (
-          <li key={experience.id}>{experience.name}</li>
+      <h3 className='section-title'>Proficiency: {skill.proficiency}</h3>
+        <hr></hr>
+        
+        <div className='experience-info'>
+        <h3 className='section-title'>Related Jobs:</h3>
+        <ul>
+            {jobs.map(job => (
+            <React.Fragment key={job.id}>
+                <li className='experience'>{job.name}</li>
+                <li className='organization-name'>{job.organizations[0].name}</li>
+                 <li className='experience-date'>
+                        {job.fromMonth && job.fromMonth.slice(0, 3)} {job.fromYear} - {job.toMonth && job.toMonth.slice(0, 3)} {job.toYear}
+                </li>    
+               </React.Fragment>
         ))}
-      </ul>
-      <h3>Other Users with this Skill</h3>
-      <ul>
-        {otherUsers.map(user => (
-          <li key={user.username}>{user.name}</li>
+        </ul>
+        </div>
+        <hr></hr>
+
+
+        <div className='experience-info'>
+        <h3 className='section-title'>Related Education:</h3>
+        <ul>
+            {education.map(education => (
+            <React.Fragment key={education.id}>
+                <li className='experience'>{education.name}</li>
+                <li className='organization-name'>{education.organizations[0].name}</li>
+            </React.Fragment>
         ))}
-      </ul>
+        </ul>
+        </div>
+        <hr></hr>
+
+
+        <div className='experience-info'>
+        <h3 className='section-title'>Related Projects:</h3>
+        <ul>
+            {projects.map(projects => (
+            <React.Fragment key={projects.id}>
+                <li className='experience'>{projects.name}</li>
+                <li className='organization-name'>{projects.organizations[0].name}</li>
+              
+            </React.Fragment>
+        ))}
+        </ul>
+        </div>
+        <hr></hr>
+
+        <h3 className='section-title'>Other people with this skill:</h3>
+        <ul>
+            {otherUsers.map(user => (
+                <li key={user.username} className='single-user'>
+                    {user.picture ? (
+                        <img className="profile-picture" src={user.picture} alt="Profile" />
+                    ) : (
+                        <div className="profile-picture-placeholder"></div>
+                    )}
+                    <div className='single-user-details'>
+                        <span className='single-user-name'>{user.name}</span>
+                        <span className='single-user-headline'>{user.professionalHeadline}</span>
+                    </div>
+                </li>
+            ))}
+        </ul>
     </div>
   );
 };
