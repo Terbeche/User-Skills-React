@@ -1,10 +1,22 @@
 import './App.css';
+import SkillsList from './components/SkillsList';
+import SkillDetails from './components/SkillDetails';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+
+const App = () =>{
   return (
-    <div>
 
-    </div>
+    <Router>
+    <Routes>
+      <Route path="/" element={<SkillsList username="termus96" />} />
+      <Route path="/:skillName" element={<SkillDetails />} />
+    </Routes>
+  </Router>
+
+   
+      
+   
   );
 }
 
