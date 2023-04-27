@@ -9,7 +9,6 @@ const SkillDetails = () => {
     const projects = location.state.projects;
     const otherUsers = location.state.otherUsers;
 
-    console.log(jobs[0].organizations[0].name);
 //   const relatedEducation = education.filter(education =>
 //     education.strengths.includes(skill.name)
 //   );
@@ -25,7 +24,8 @@ const SkillDetails = () => {
   return (
     <div className='skill-details'>
       <h2>{skill.name}</h2>
-      <h3 className='section-title'>Proficiency: {skill.proficiency}</h3>
+      <h3 className='skill-proficiency'>Proficiency: <span>{skill.proficiency}</span></h3>
+        <p className='skill-recommendations'>Recommendations: <span>{skill.recommendations}</span></p>
         <hr></hr>
         
         <div className='experience-info'>

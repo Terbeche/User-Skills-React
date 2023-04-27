@@ -54,6 +54,24 @@ body {
     padding: 1rem;
 }
 
+.skill-proficiency{
+    color: #aaa;
+    margin-bottom: 1rem;
+} 
+
+.skill-proficiency span {
+    color: #fff;
+}
+
+.skill-recommendations {
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+.skill-recommendations span {
+    color: #fff;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     font-family: 'Helvetica Neue', sans-serif;
@@ -155,11 +173,6 @@ ul {
 .organization-name {
     margin-bottom: 0.25rem;
 }
-
-.section-title{
-    color: #aaa;
-    margin-bottom: 1rem;
-} 
 
 hr {
     width: 100%;
