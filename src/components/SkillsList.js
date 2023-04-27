@@ -6,7 +6,9 @@ const SkillsList = ({ username }) => {
     const [picture, setPicture] = useState(null);
     const [name, setName] = useState(null);
     const [experiences, setExperiences] = useState([]); 
-
+    const [education, setEducation] = useState([]);
+    const [otherUsers, setOtherUsers] = useState([]);
+    const [clickedSkill, setClickedSkill] = useState(null);
 
     const navigate = useNavigate();
 
@@ -26,14 +28,46 @@ const SkillsList = ({ username }) => {
         setPicture(data.person.picture);
         setName(data.person.name);
         setExperiences(data.experiences);
+        setEducation(data.education);
         })
         .catch(error => console.error(error));
     }, [username]);
-  
-    function handleSkillClick(skill) {
-      navigate(`/${skill.name}`, { state: { skill, experiences } });
 
-    }
+
+    useEffect(() => {
+        if (clickedSkill && otherUsers) {
+          navigate(`/${clickedSkill.name}`, { state: { skill: clickedSkill, experiences, education, otherUsers } });
+    
+          setClickedSkill(null);
+        }
+      }, [clickedSkill, otherUsers]);
+
+
+  
+    const handleSkillClick = (skill)  => {
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const targetUrl = `https://torre.bio/api/search/people`;
+
+
+        fetch('https://search.torre.co/people/_search/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "skill/role": {
+                    "text": skill.name,
+                    "experience": "potential-to-develop"
+                    }
+            })
+          })
+            .then(response => response.json())
+            .then(data => {
+              setOtherUsers(data.results);
+              setClickedSkill(skill);
+            });
+            
+    };  
 
     const skillGroups = {
         "no-experience-interested": [],
@@ -115,8 +149,3 @@ const SkillsList = ({ username }) => {
   };
   
   export default SkillsList;
-
-  
-
-  
-   
