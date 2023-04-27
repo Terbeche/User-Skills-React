@@ -12,11 +12,15 @@ const SkillsList = () => {
     const [otherUsers, setOtherUsers] = useState([]);
     const [clickedSkill, setClickedSkill] = useState(null);
 
-
-    const isDevelopment = process.env.NODE_ENV === 'development';
-    const proxyUrl = isDevelopment ? 'https://cors-anywhere.herokuapp.com/' : '';
-    const targetUrl = `${proxyUrl}https://torre.bio/api/bios/${username}`;
-    // const targetUrl = `https://torre.bio/api/bios/${username}`;
+    
+    const isDevelopment = window.location.hostname === 'localhost';
+    const proxyUrl = isDevelopment ? 'https://cors-anywhere.herokuapp.com/' : '/api';
+    let targetUrl = `${proxyUrl}https://torre.bio/api/bios/${username}`;
+    
+    if ( !isDevelopment) {
+        targetUrl = `${proxyUrl}/bios/${username}`;
+    }
+    
     const navigate = useNavigate();
 
     useEffect(() => {
