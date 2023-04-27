@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/bios/*"
+  to = "https://torre.bio/api/bios/:splat"
+  status = 200
+  force = true

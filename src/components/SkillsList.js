@@ -12,12 +12,15 @@ const SkillsList = () => {
     const [otherUsers, setOtherUsers] = useState([]);
     const [clickedSkill, setClickedSkill] = useState(null);
 
+
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    const proxyUrl = isDevelopment ? 'https://cors-anywhere.herokuapp.com/' : '';
+    const targetUrl = `${proxyUrl}https://torre.bio/api/bios/${username}`;
+    // const targetUrl = `https://torre.bio/api/bios/${username}`;
     const navigate = useNavigate();
 
     useEffect(() => {
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-      const targetUrl = `https://torre.bio/api/bios/${username}`;
-      fetch(proxyUrl + targetUrl)
+      fetch(targetUrl)
         .then(response => {
           if (!response.ok) {
             throw new Error(`An error occurred: ${response.status}`);
@@ -34,7 +37,7 @@ const SkillsList = () => {
         setProjects(data.projects);
         })
         .catch(error => console.error(error));
-    }, [username]);
+    }, [username, targetUrl]);
 
 
     useEffect(() => {
