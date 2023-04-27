@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Terbeche-Mostefa-violet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# User-Skills-React
 
-## Available Scripts
+> This project is a web application that allows you to list all the skills that a user has by entering their username. The users and their skills come from Torre API, which is a revolutionary recruitment platform that emphasizes AI in the recruitment process. Additionally, you can also find related experiences for the user on each skill, as well as other users who possess the same skill
 
-In the project directory, you can run:
+## Screen shots
 
-### `npm start`
+- ![](./screen/screen1.PNG)
+- ![](./screen/screen2.PNG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built With
+- ![](https://img.shields.io/badge/API-222222?style=flat-square&logo=json&logoColor=white)
+- ![](https://img.shields.io/badge/JSON-9400D3?style=flat-square&logo=json&logoColor=white)
+- ![](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+- ![](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+- ![](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+- ![](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ![](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+- ![](https://img.shields.io/badge/GitHub-0052CC?style=flat-square&logo=github&logoColor=white)
 
-### `npm test`
+## Live Demo (if available)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Live Demo Link](https://user-skill-react.netlify.app/)
 
-### `npm run build`
+## Author
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+👤 **Terbeche Mostefa**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- GitHub: [@githubhandle](https://github.com/Terbeche)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mustapha-terbeche/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
 
-### `npm run eject`
+If you wish to run the project locally, please do the following:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.- Clone the repository to your local machine. - **`git clone https://github.com/Terbeche/User-Skills-React.git`** - **`cd User-Skills-React`**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2.- Install Node.js and npm if you haven't already.
+To install Node.js, follow the instructions on [Node.js](https://nodejs.org/en/).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To install npm with the necessary dependencies, run the following command in your terminal:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+3.- Once you have the setup and the project locally, you can run the project using the following command in your terminal:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4.- and if you want to watch the changes live, run the following command (it will run the website on localhost:3000):
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Show your support
 
-### Analyzing the Bundle Size
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Acknowledgments
 
-### Making a Progressive Web App
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.
