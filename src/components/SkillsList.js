@@ -103,8 +103,7 @@ const SkillsList = ({ username }) => {
         
         <div className='skills'>
 
-  
-        <h2 className='skills-title'>Skills and Interests:</h2>
+        {name && <h2 className='skills-title'>Skills and Interests:</h2>}
         <div className='skills-group'>
         {skillGroups.master.length !== 0 && <h2 className='skill-level'>Master</h2>}
         <ul>

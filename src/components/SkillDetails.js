@@ -34,7 +34,9 @@ const SkillDetails = () => {
             {jobs.map(job => (
             <React.Fragment key={job.id}>
                 <li className='experience'>{job.name}</li>
-                <li className='organization-name'>{job.organizations[0].name}</li>
+                {job.organizations && job.organizations[0] && (
+                        <li className='organization-name'>{job.organizations[0].name}</li>
+                    )}
                  <li className='experience-date'>
                         {job.fromMonth && job.fromMonth.slice(0, 3)} {job.fromYear} - {job.toMonth && job.toMonth.slice(0, 3)} {job.toYear}
                 </li>    
@@ -51,7 +53,9 @@ const SkillDetails = () => {
             {education.map(education => (
             <React.Fragment key={education.id}>
                 <li className='experience'>{education.name}</li>
-                <li className='organization-name'>{education.organizations[0].name}</li>
+                {education.organizations && education.organizations[0] && (
+                        <li className='organization-name'>{education.organizations[0].name}</li>
+                    )}
             </React.Fragment>
         ))}
         </ul>
@@ -63,17 +67,18 @@ const SkillDetails = () => {
         <h3 className='section-title'>Related Projects:</h3>
         <ul>
             {projects.map(projects => (
-            <React.Fragment key={projects.id}>
-                <li className='experience'>{projects.name}</li>
-                <li className='organization-name'>{projects.organizations[0].name}</li>
-              
-            </React.Fragment>
+                <React.Fragment key={projects.id}>
+                    <li className='experience'>{projects.name}</li>
+                    {projects.organizations && projects.organizations[0] && (
+                        <li className='organization-name'>{projects.organizations[0].name}</li>
+                    )}
+                </React.Fragment>
         ))}
         </ul>
         </div>
         <hr></hr>
 
-        <h3 className='section-title'>Other people with this skill:</h3>
+        <h3 className='other-users-section'>Other people with this skill:</h3>
         <ul>
             {otherUsers.map(user => (
                 <li key={user.username} className='single-user'>

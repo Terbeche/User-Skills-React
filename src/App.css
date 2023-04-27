@@ -156,7 +156,7 @@ ul {
 .experience {
     color: #FFA500;
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .experience-info {
@@ -170,9 +170,9 @@ ul {
 
 }
 
-.organization-name {
+ .organization-name {
     margin-bottom: 0.25rem;
-}
+} 
 
 hr {
     width: 100%;
@@ -181,4 +181,9 @@ hr {
     background-color: #aaa;
     margin: 2rem 0;
     border: none;
+}
+
+.other-users-section {
+    margin: 2rem;
+    color: #aaa;
 }
