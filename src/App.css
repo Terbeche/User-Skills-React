@@ -1,0 +1,84 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+#name{
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.skills {
+    margin: 2rem;
+}
+
+.skills-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+.skill-name {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 4px;
+    background-color: #3c3b39;
+    color: #ffffff;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+
+.skill-level {
+    color: #797773;
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 4px;
+}
+
+.skills-group {
+    margin-bottom: 2rem;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: #FFA500;
+}
+  
+a {
+color: #FFA500;
+}
+
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#profile-picture{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 2rem auto;
+    display: block;
+    border: 8px solid #fff;
+    box-shadow: 0 0 0 5px #1c1c1c;
+}

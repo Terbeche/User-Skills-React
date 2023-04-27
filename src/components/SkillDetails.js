@@ -18,7 +18,7 @@ const SkillDetails = () => {
   return (
     <div>
       <h2>{skill.name}</h2>
-      <p>{skill.proficiency}</p>
+      <p>Proficiency: {skill.proficiency}</p>
       <h3>Related Experiences</h3>
       <ul>
         {relatedExperiences.map(experience => (

@@ -94,56 +94,72 @@ const SkillsList = ({ username }) => {
     });
   
     return (
-      <>        
-        {picture && <img src={picture} alt="Profile" />}
+      <>       
 
-        {name && <h1>{name}</h1>}
+      <div id="profile-picture-wrapper"> 
+        {picture && <img id="profile-picture" src={picture} alt="Profile" />}
+        </div>
+        {name && <h1 id='name'>{name}</h1>}
         
-        <h2>Skills and Interests</h2>
-        {skillGroups.master.length !== 0 && <h2>Master</h2>}
+        <div className='skills'>
+
+  
+        <h2 className='skills-title'>Skills and Interests:</h2>
+        <div className='skills-group'>
+        {skillGroups.master.length !== 0 && <h2 className='skill-level'>Master</h2>}
         <ul>
             {skillGroups.master.map(skill => (
-            <li key={skill.name} onClick={() => handleSkillClick(skill)}>
+            <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
                 {skill.name}
             </li>
             ))}
         </ul>
+        </div>
 
-        {skillGroups.expert.length !== 0 && <h2>Expert</h2>}
+        <div className='skills-group'>
+        {skillGroups.expert.length !== 0 && <h2 className='skill-level'>Expert</h2>}
         <ul>
           {skillGroups.expert.map(skill => (
-            <li key={skill.name} onClick={() => handleSkillClick(skill)}>
+            <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
               {skill.name}
             </li>
           ))}
         </ul>
+        </div>
 
-        {skillGroups.proficient.length !== 0 && <h2>Proficient</h2>}
+        <div className='skills-group'>
+        {skillGroups.proficient.length !== 0 && <h2 className='skill-level'>Proficient</h2>}
         <ul>
           {skillGroups.proficient.map(skill => (
-            <li key={skill.name} onClick={() => handleSkillClick(skill)}>
+            <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
               {skill.name}
             </li>
           ))}
         </ul>
+        </div>
 
-        {skillGroups.novice.length !== 0 && <h2>Novice</h2>}
+        <div className='skills-group'>
+        {skillGroups.novice.length !== 0 && <h2 className='skill-level'>Novice</h2>}
         <ul>
           {skillGroups.novice.map(skill => (
-            <li key={skill.name} onClick={() => handleSkillClick(skill)}>
+            <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
               {skill.name}
             </li>
           ))}
         </ul>
-
-        {skillGroups["no-experience-interested"].length !== 0 && <h2>No Experience Interested</h2>}
+        </div>
+        
+        <div className='skills-group'>
+        {skillGroups["no-experience-interested"].length !== 0 && <h2 className='skill-level'>No Experience - Interested</h2>}
         <ul>
             {skillGroups["no-experience-interested"].map(skill => (
-            <li key={skill.name} onClick={() => handleSkillClick(skill)}>
+            <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
                 {skill.name}
             </li>
             ))}
         </ul>
+        </div>
+        </div>
       </>
     );
   };
