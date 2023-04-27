@@ -15,7 +15,8 @@ const SkillsList = () => {
     
     const isDevelopment = window.location.hostname === 'localhost';
     const proxyUrl = isDevelopment ? 'https://cors-anywhere.herokuapp.com/' : '/api';
-    let targetUrl = `${proxyUrl}https://torre.bio/api/bios/${username}`;
+    // let targetUrl = `${proxyUrl}https://torre.bio/api/bios/${username}`;
+    let targetUrl = `${proxyUrl}https://bio.torre.co/api/bios/${username}`;
     
     if ( !isDevelopment) {
         targetUrl = `${proxyUrl}/bios/${username}`;
