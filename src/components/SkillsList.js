@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const SkillsList = ({ username }) => {
+const SkillsList = () => {
+    const [username, setUsername] = useState('termus96');
     const [skills, setSkills] = useState([]);
     const [picture, setPicture] = useState(null);
     const [name, setName] = useState(null);
@@ -39,18 +40,21 @@ const SkillsList = ({ username }) => {
     useEffect(() => {
         if (clickedSkill && otherUsers) {
           navigate(`/${clickedSkill.name}`, { state: { skill: clickedSkill, jobs, education, projects, otherUsers } });
-    
+      
           setClickedSkill(null);
         }
-      }, [clickedSkill, otherUsers]);
+      }, [clickedSkill, otherUsers, education, jobs, navigate, projects]);
 
 
+    const handleUsernameChange = (event) => {
+        setUsername(event.target.value);
+    };
+
+    const handleSearchClick = () => {
+        // Perform search or update state with the entered username
+    };
   
     const handleSkillClick = (skill)  => {
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        const targetUrl = `https://torre.bio/api/search/people`;
-
-
         fetch('https://search.torre.co/people/_search/', {
             method: 'POST',
             headers: {
@@ -97,7 +101,11 @@ const SkillsList = ({ username }) => {
   
     return (
       <>       
-
+       <div className='search-box'>
+                <input type="text" value={username} onChange={handleUsernameChange} />
+                <button onClick={handleSearchClick}>Search</button>
+        </div>
+        
         {picture && <img id="profile-picture" src={picture} alt="Profile" />}
         {name && <h1 id='name'>{name}</h1>}
         

@@ -187,3 +187,33 @@ hr {
     margin: 2rem;
     color: #aaa;
 }
+
+.search-box {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.search-box input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 20px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFA500;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #ce9427;
+}
