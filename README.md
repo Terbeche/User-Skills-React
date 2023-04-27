@@ -6,8 +6,8 @@
 
 ## Screen shots
 
-- ![](./screen/screen1.PNG)
-- ![](./screen/screen2.PNG)
+- ![](./screen/screen1.png)
+- ![](./screen/screen2.png)
 
 ## Built With
 - ![](https://img.shields.io/badge/API-222222?style=flat-square&logo=json&logoColor=white)
