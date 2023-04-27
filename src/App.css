@@ -190,9 +190,13 @@ hr {
 
 .search-box {
     display: flex;
+    flex-direction: column;
     align-items: center;
     max-width: 400px;
     margin: 2rem auto;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-box input[type="text"] {
@@ -204,16 +208,24 @@ hr {
     font-size: 16px;
 }
 
-.search-box button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 20px;
-    background-color: #FFA500;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+label {
+    color: #aaa;
 }
 
-.search-box button:hover {
-    background-color: #ce9427;
-}
+.back-button {
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  
+  .back-button:hover {
+    background-color: darkorange;
+  }

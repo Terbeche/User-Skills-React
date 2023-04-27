@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 
 const SkillDetails = () => {
@@ -9,20 +9,12 @@ const SkillDetails = () => {
     const projects = location.state.projects;
     const otherUsers = location.state.otherUsers;
 
-//   const relatedEducation = education.filter(education =>
-//     education.strengths.includes(skill.name)
-//   );
-
-//   const relatedJobs = jobs.filter(jobs =>
-//     jobs.strengths.includes(skill.name)
-//   );
-
-//     const relatedProjects = projects.filter(projects =>
-//         projects.strengths.includes(skill.name)
-//     );
-
+    const navigate = useNavigate();
   return (
+
+
     <div className='skill-details'>
+    <button className='back-button' onClick={() => navigate('..')}>Back</button>
       <h2>{skill.name}</h2>
       <h3 className='skill-proficiency'>Proficiency: <span>{skill.proficiency}</span></h3>
         <p className='skill-recommendations'>Recommendations: <span>{skill.recommendations}</span></p>

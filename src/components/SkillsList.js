@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaRegLightbulb } from 'react-icons/fa';
+import { FaStar, FaStarHalfAlt, FaMedal } from 'react-icons/fa';
+import { GiTrophyCup } from 'react-icons/gi';
 
 const SkillsList = () => {
     const [username, setUsername] = useState('termus96');
@@ -50,10 +53,6 @@ const SkillsList = () => {
         setUsername(event.target.value);
     };
 
-    const handleSearchClick = () => {
-        // Perform search or update state with the entered username
-    };
-  
     const handleSkillClick = (skill)  => {
         fetch('https://search.torre.co/people/_search/', {
             method: 'POST',
@@ -102,8 +101,8 @@ const SkillsList = () => {
     return (
       <>       
        <div className='search-box'>
+                <label>Enter Username</label>  
                 <input type="text" value={username} onChange={handleUsernameChange} />
-                <button onClick={handleSearchClick}>Search</button>
         </div>
         
         {picture && <img id="profile-picture" src={picture} alt="Profile" />}
@@ -113,7 +112,9 @@ const SkillsList = () => {
 
         {name && <h2 className='skills-title'>Skills and Interests:</h2>}
         <div className='skills-group'>
-        {skillGroups.master.length !== 0 && <h2 className='skill-level'>Master</h2>}
+
+        <GiTrophyCup />
+        <h2 className='skill-level'>Master</h2>
         <ul>
             {skillGroups.master.map(skill => (
             <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
@@ -124,7 +125,8 @@ const SkillsList = () => {
         </div>
 
         <div className='skills-group'>
-        {skillGroups.expert.length !== 0 && <h2 className='skill-level'>Expert</h2>}
+        <FaMedal />
+        <h2 className='skill-level'>Expert</h2>
         <ul>
           {skillGroups.expert.map(skill => (
             <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
@@ -135,7 +137,8 @@ const SkillsList = () => {
         </div>
 
         <div className='skills-group'>
-        {skillGroups.proficient.length !== 0 && <h2 className='skill-level'>Proficient</h2>}
+        <FaStar />
+         <h2 className='skill-level'>Proficient</h2>
         <ul>
           {skillGroups.proficient.map(skill => (
             <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
@@ -146,8 +149,10 @@ const SkillsList = () => {
         </div>
 
         <div className='skills-group'>
-        {skillGroups.novice.length !== 0 && <h2 className='skill-level'>Novice</h2>}
+        <FaStarHalfAlt />
+        <h2 className='skill-level'>Novice</h2>
         <ul>
+        
           {skillGroups.novice.map(skill => (
             <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
               {skill.name}
@@ -157,7 +162,8 @@ const SkillsList = () => {
         </div>
 
         <div className='skills-group'>
-        {skillGroups["no-experience-interested"].length !== 0 && <h2 className='skill-level'>No Experience - Interested</h2>}
+        <FaRegLightbulb />
+       <h2 className='skill-level'>No Experience - Interested</h2>
         <ul>
             {skillGroups["no-experience-interested"].map(skill => (
             <li className='skill-name' key={skill.name} onClick={() => handleSkillClick(skill)}>
